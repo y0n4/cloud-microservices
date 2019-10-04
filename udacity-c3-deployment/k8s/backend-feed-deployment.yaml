@@ -5,23 +5,23 @@ metadata:
     service: backend-feed
   name: backend-feed
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
         service: backend-feed
     spec:
       containers:
-      - image: scheele/udacity-restapi-feed
+      - image: y0n4/udagram-restapi-feed
         name: backend-feed
         imagePullPolicy: Always  
         resources:
           requests:
             memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"                  
+            cpu: "100m"
+          # limits:
+          #   memory: "1024Mi"
+          #   cpu: "500m"                  
         env:
         - name: URL
           valueFrom:
